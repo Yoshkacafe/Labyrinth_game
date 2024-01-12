@@ -11,8 +11,8 @@ def main():
         cell_size = 30
         num_rows = 25
         num_cols = 35
-        screen_width = 11*30 #taille de chemin -> 20 * 30 (le nombre de case de chemin + 5 (taille de mur) * 29 (nombre de mur)
-        screen_height = 11*30
+        screen_width = 21*30 #taille de chemin -> 20 * 30 (le nombre de case de chemin + 5 (taille de mur) * 29 (nombre de mur)
+        screen_height = 21*30
         screen = pygame.display.set_mode((screen_width, screen_height))
         pygame.display.set_caption("Labyrinthe")
         map = Map(screen, screen_width, screen_height)
@@ -21,7 +21,7 @@ def main():
         map.afficher2pointzero()
         # Initialisation du joueur grace à Player.py
         # Set la velocite du joueur proportionnellement à la taille de la fenêtre
-        p = Player(screen, screen_width - 52.5, screen_height - 52.5, .1)
+        p = Player(screen, screen_width - 52.5, screen_height - 52.5, .1, map)
 
         screen.fill(WHITE)
 
@@ -41,8 +41,6 @@ def main():
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
-
-            map.set_collider(p.player)
 
             # Déplacement vers le haut, bas, gauche, droite du joueur définit précedement
 
