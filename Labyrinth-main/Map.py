@@ -11,13 +11,13 @@ class Map:
 
     ### Initialisation ###
 
-    def __init__(self, screen, screen_width, screen_height, collision_list=[]):
+    def __init__(self, screen, screen_width, screen_height, collision_list=[], player_collision=[]):
         self.collision_list = collision_list
         self.main_liste = []
         self.screen_width = screen_width//30
         self.screen_height = screen_height//30
         self.screen = screen
-        self.player_collision = []
+        self.player_collision = player_collision
         self.liste_enemy_collision = []
         self.liste_enemies = []
 
